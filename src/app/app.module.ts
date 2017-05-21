@@ -5,14 +5,12 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component';
-import { LineChartComponent } from './line-chart/line-chart.component';
 import { appRoutes } from './routes';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LineChartComponent,
     HomeComponent
   ],
   imports: [
