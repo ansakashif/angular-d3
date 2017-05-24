@@ -34,7 +34,7 @@ export class LineChartComponent implements OnInit {
   }
 
   createLineChart() {
-    
+    debugger;
     let element = this.container.nativeElement;
     this.vis = d3.select(element).append('svg').attr('width', '1000').attr('height', '500');
       this.width = 1000,
@@ -86,20 +86,16 @@ export class LineChartComponent implements OnInit {
       .call(d3.axisLeft(this.yRange));
 
     
-    // let lineFunc = d3.line<IDataType>()
-    //   .x(function (d) {
-    //     return this.xRange(d.x);
-    //   })
-    //   .y(function (d) {
-    //     return this.yRange(d.y);
-    //   })
-    //   // .interpolate('basis');
+    let lineFunc = d3.line<IDataType>()
+      .x((d)=> this.xRange(d.x))
+      .y((d)=> this.yRange(d.y))
+       //.interpolate('basis');
 
-    // this.vis.append('path')
-    //   .attr("d", lineFunc(this.lineData))
-    //   .attr("stroke", "blue")
-    //   .attr("stroke-width", 2)
-    //   .attr("fill", "none");
+    this.vis.append('path')
+      .attr("d", lineFunc(this.lineData))
+      .attr("stroke", "blue")
+      .attr("stroke-width", 2)
+      .attr("fill", "none");
 
   }
 }
