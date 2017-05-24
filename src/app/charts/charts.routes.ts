@@ -1,7 +1,9 @@
-import { BarChartComponent } from './bar-chart/bar-chart.component'
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { LineChartComponent } from './line-chart/line-chart.component'
 
 export const chartRoutes = [
-    {path: 'bar-chart', component: BarChartComponent} 
+    {path: 'bar-chart', component: BarChartComponent},
+    {path: 'line-chart', component: LineChartComponent} 
 ]
 
 // import { NgModule } from '@angular/core';
