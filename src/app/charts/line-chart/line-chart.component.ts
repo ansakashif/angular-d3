@@ -34,7 +34,6 @@ export class LineChartComponent implements OnInit {
   }
 
   createLineChart() {
-    debugger;
     let element = this.container.nativeElement;
     this.vis = d3.select(element).append('svg').attr('width', '1000').attr('height', '500');
       this.width = 1000,
@@ -61,20 +60,6 @@ export class LineChartComponent implements OnInit {
       })
       ]),
 
-      // this.xAxis = this.vis.axis()
-      //   .scale(this.xRange)
-      //   .tickSize(5)
-      //   .tickSubdivide(true),
-
-      // this.xAxis = d3.scaleLinear().domain(this.lineData.x)
-
-      // this.yAxis = this.vis.axis()
-      //   .scale(this.yRange)
-      //   .tickSize(5)
-      //   .orient("left")
-      //   .tickSubdivide(true);
-
-
     this.vis.append('g')
       .attr("class", "x axis")
       .attr("transform", "translate(0," + (this.height - this.margins.bottom) + ")")
@@ -89,7 +74,6 @@ export class LineChartComponent implements OnInit {
     let lineFunc = d3.line<IDataType>()
       .x((d)=> this.xRange(d.x))
       .y((d)=> this.yRange(d.y))
-       //.interpolate('basis');
 
     this.vis.append('path')
       .attr("d", lineFunc(this.lineData))
