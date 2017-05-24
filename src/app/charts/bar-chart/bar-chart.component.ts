@@ -10,7 +10,6 @@ import { BarChartService } from '../bar-chart.service'
 })
 export class BarChartComponent implements OnInit {
 
-
   @ViewChild('chart') private chartContainer: ElementRef;
   @Input() private data: Array<any>
 
@@ -44,7 +43,7 @@ export class BarChartComponent implements OnInit {
     this.width = element.offsetWidth - this.margin.left - this.margin.right;
     this.height = element.offsetHeight - this.margin.top - this.margin.bottom;
     let svg = d3.select(element).append('svg')
-      .attr('width', element.offsetWidth)
+      .attr('width', '100%')
       .attr('height', element.offsetHeight);
 
     // chart plot area
